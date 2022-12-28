@@ -4,9 +4,9 @@ protocol FoodReadyDelegate: AnyObject {
     func didFinishMakingFood(restaurantName: String)
 }
 
-class Restaurant { //✅
+class Restaurant {
     weak var delegate: FoodReadyDelegate?
-    let name: String //✅
+    let name: String
     
     init(name: String) {
         self.name = name
@@ -57,5 +57,5 @@ let restaurants = [
 ]
 
 let foodOrderer = FoodOrderer(restaurants: restaurants)
-foodOrderer.orderFood()
 //foodOrderer.buyFood()
+foodOrderer.orderFood()
